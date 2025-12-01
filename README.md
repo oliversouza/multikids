@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# MultiKids — Projeto de Extensão (Faculdade Descomplica)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**MultiKids** é um sistema web desenvolvido como projeto de extensão da **Faculdade Descomplica**. A aplicação foi criada para apoiar profissionais que trabalham com o desenvolvimento infantil (terapeutas, psicólogos, educadores) na Serviço de Terapia Ocupacional Andrielly SS LTDA, utilizando a aplicação do protocolo PORTAGE, registro de avaliações, acompanhamento histórico e geração de relatórios e planos de intervenção.
 
-## Available Scripts
+## Objetivo
 
-In the project directory, you can run:
+- Fornecer uma ferramenta prática e acessível para registro e acompanhamento do desenvolvimento infantil.
+- Permitir avaliações por categorias (ex.: Linguagem, Motor, Autocuidado, Social, Cognição) e por faixas etárias.
+- Gerar relatórios comparativos com padrões PORTAGE e sugerir metas e ações de intervenção.
 
-### `npm start`
+## Público-alvo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Terapeutas ocupacionais, fonoaudiólogos, psicólogos, educadores e estudantes envolvidos em práticas de saúde e educação infantil.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Principais funcionalidades
 
-### `npm test`
+- Cadastro de crianças e armazenamento local das avaliações (localStorage).
+- Realização de avaliações por categoria e faixa etária com codificação de respostas (Sim/Às vezes/Não).
+- Dashboard com estatísticas e histórico de avaliações.
+- Geração de relatórios (visão geral, progresso, detalhado e metas) e exportação para PDF.
+- Visualizações gráficas para acompanhamento (barras, linhas, radar).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias
 
-### `npm run build`
+- Frontend: React (Create React App)
+- Bibliotecas: Chart.js (via react-chartjs-2), jsPDF, react-router-dom, react-icons
+- Armazenamento local: `localStorage`
+- Build: webpack (via CRA)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como usar
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Na primeira execução, informe seu nome como terapeuta na tela inicial para acessar o painel.
+- Cadastre as crianças com nome, idade e observações.
+- Realize avaliações por categoria/faixa etária e salve as respostas.
+- Acesse o relatório de cada criança para visualizar performance, gráficos e recomendações.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estrutura de dados (resumo)
 
-### `npm run eject`
+- Criança: `{ id, name, age, notes, evaluations: [...] }`
+- Avaliação: `{ id, date, category, ageRange, answers: { questionId: score } }`
+- Score: `Sim` = 2, `Às vezes` = 1, `Não` = 0
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Personalização e identidade visual
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Projeto rebrandado como **MultiKids** para o escopo do trabalho de extensão.
+- Cores, logo e background foram adicionados ao frontend (arquivo `public/logo_multikids.png` e `public/multikids-background.jpg`).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Considerações éticas e privacidade
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Este protótipo armazena dados localmente. Ao utilizar dados reais de crianças, respeite as normas éticas da instituição, termos de consentimento dos responsáveis e legislações de proteção de dados aplicáveis.
